@@ -1,0 +1,32 @@
+---
+# tasks file for ansible-role-bede-test
+
+- name: Creating group
+  group:
+    name: "{{ group }}"
+    state: present
+
+- name: Creating user account
+  user:
+    name: "{{ user }}"
+    group: "{{ group }}"
+    state: present
+
+- name: Creating directory on filesystem
+  file:
+    path: "{{ log_path }}"
+    owner: "{{ user }}"
+    group: "{{ group }}" 
+    mode: 0777
+    state: directory
+
+- name: Deploy cleanlogs script to etc/cron.daily
+  copy:
+    src: "{{ role_path }}/{{ script_source }}/{{ clean_logs_script }}"
+    dest: "{{ script_destination }}"
+
+- name: Ensure cleanlogs script is executable
+  file:
+    path: "{{ script_destination }}/{{ clean_logs_script }}"
+    state: touch
+    mode: 0777

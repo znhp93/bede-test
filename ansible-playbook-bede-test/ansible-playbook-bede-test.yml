@@ -1,0 +1,5 @@
+- name: Bede Tech test
+  hosts: localhost
+
+  roles:
+     - ansible-role-bede-test

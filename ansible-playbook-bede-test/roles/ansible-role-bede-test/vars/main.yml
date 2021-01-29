@@ -1,0 +1,10 @@
+---
+# vars file for ansible-role-bede-test
+#
+
+group: bede_group
+user: bede_user
+log_path: /logs
+script_source: files/
+clean_logs_script: cleanlogs
+script_destination: /etc/cron.daily/
