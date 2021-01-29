@@ -34,7 +34,7 @@ Example Playbook
 
 
     - name: Bede tech test
-    - hosts: localhost
+      hosts: localhost
       roles:
          - ansible-role-bede-test
 
