@@ -24,13 +24,6 @@ script_destination: /etc/cron.daily - This is where the bash script will be copi
 clean_logs_script: cleanlogs - The name of the script which cleans the log directory
 ```
 
-group: bede_group - Group created which the bede_user is assigned to
-user: bede_user - User created for the application to be run as
-log_path: /logs - Directory owned by bede_user, this is where the log files for the application will be created
-script_source: files/cleanlogs - This is the location of the cleanlogs bash script
-script_destination: /etc/cron.daily - This is where the bash script will be copied to
-
-
 Dependencies
 ------------
 
